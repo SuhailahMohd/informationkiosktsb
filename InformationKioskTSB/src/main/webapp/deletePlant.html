@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Plant Information</title>
+<link rel="stylesheet" href="createplantstyle.css"> </head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">TSB </a>
+  <nav class="nav-items">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Feedback</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="form-container">
+    <h2>Delete Plant Information</h2>
+    <form id="userForm">
+      <div class="form-group">
+        <h3>Plant ID:</h3>
+        <input type="text" id="plantId" name="plantId">
+      </div>
+      <div class="form-actions">
+        <input type="submit" value="Submit" onclick="submitForm()">
+        <input type="reset" value="Reset" onclick="resetForm()">
+      </div>
+    </form>
+    
+    <div id="plantDetails" class="hidden-fields"></div>
+    <div id="deleteForm" class="hidden-fields">
+      <h3>Confirm Deletion?</h3>
+      <button onclick="confirmDelete()">Delete</button>
+      <button onclick="cancelDelete()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Include your existing JavaScript functions here (submitForm, resetForm, etc.)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+<meta charset="UTF-8"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>Plant Information</title> 
+
+ 
+
+<body style="background-color: #e1efca;"></body> 
+
+ 
+
+<style> 
+
+/* Table Styling */ 
+
+table { 
+
+width: 100%; 
+
+border-collapse: collapse; 
+
+} 
+
+ 
+
+th, td { 
+
+padding: 8px; 
+
+text-align: left; 
+
+border-bottom: 1px solid #ddd; 
+
+} 
+
+ 
+
+th { 
+
+background-color: #f2f2f2; 
+
+} 
+
+ 
+
+/* Button Styling */ 
+
+.btn-group { 
+
+display: flex; 
+
+} 
+
+ 
+
+.btn-group button { 
+
+margin-right: 5px; 
+
+padding: 5px 10px; 
+
+border: none; 
+
+cursor: pointer; 
+
+} 
+
+ 
+
+.btn-delete { 
+
+background-color: #f44336; 
+
+color: white; 
+
+} 
+
+ 
+
+.btn-edit { 
+
+background-color: #4CAF50; 
+
+color: white; 
+
+} 
+
+ 
+
+.btn-view { 
+
+background-color: #008CBA; 
+
+color: white; 
+
+} 
+
+ 
+
+.image { 
+
+width: 50px; 
+
+height: 50px; 
+
+} 
+
+ 
+
+h2 { 
+
+text-align: center; 
+
+padding-top: 1cm; 
+
+padding-bottom: 1cm; 
+
+} 
+
+ 
+
+/* Resetting default margin and padding */ 
+
+* { 
+
+margin: 0; 
+
+padding: 0; 
+
+box-sizing: border-box; 
+
+} 
+
+ 
+
+/* Basic styles for the navbar */ 
+
+.navbar { 
+
+display: flex; 
+
+justify-content: space-between; 
+
+align-items: center; 
+
+background-color: #454B1B; 
+
+padding: 10px 20px; 
+
+} 
+
+ 
+
+.navbar-left { 
+
+display: flex; 
+
+align-items: center; 
+
+} 
+
+ 
+
+.logo { 
+
+width: 50px; /* Adjust size as needed */ 
+
+height: auto; 
+
+margin-right: 20px; 
+
+} 
+
+ 
+
+.nav-links { 
+
+list-style-type: none; 
+
+} 
+
+ 
+
+.nav-links li { 
+
+display: inline-block; 
+
+margin-right: 20px; 
+
+} 
+
+ 
+
+.nav-links li a { 
+
+color: white; 
+
+text-decoration: none; 
+
+} 
+
+ 
+
+.nav-links li a:hover { 
+
+color: lightgray; 
+
+} 
+
+ 
+
+.navbar-right { 
+
+display: flex; 
+
+align-items: center; 
+
+} 
+
+ 
+
+.profile-icon { 
+
+width: 30px; /* Adjust size as needed */ 
+
+height: auto; 
+
+} 
+
+</style> 
+
+</head> 
+
+<body> 
+
+ 
+
+<nav class="navbar"> 
+
+<div class="navbar-left"> 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Coat_of_arms_of_Malacca_New.svg/1200px-Coat_of_arms_of_Malacca_New.svg.png" alt="Logo" class="logo"> 
+
+<ul class="nav-links"> 
+
+<li><a href="#">Plant Information</a></li> 
+
+<li><a href="#">Booking</a></li> 
+
+<li><a href="#">Schedule</a></li> 
+
+<li><a href="#">Event</a></li> 
+
+</ul> 
+
+</div> 
+
+<div class="navbar-right"> 
+
+<a href="#"><img src="profile-user.png" alt="Profile" class="profile-icon"></a> 
+
+</div> 
+
+</nav> 
+
+ 
+
+<h2>Plant Information</h2> 
+
+ 
+
+<table> 
+
+<thead> 
+
+<tr> 
+
+<th>PlantID</th> 
+
+<th>Scientific Name</th> 
+
+<th>Plant Type</th> 
+
+<th>Image</th> 
+
+<th>Actions</th> 
+
+</tr> 
+
+</thead> 
+
+<tbody> 
+
+<tr> 
+
+<td>001</td> 
+
+<td>Lilium</td> 
+
+<td>Outdoor plant</td> 
+
+<td><img src="https://images.unsplash.com/photo-1561897519-6e4fbd1fbc41?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="lily" class="image"></td> 
+
+<td class="btn-group"> 
+
+<button class="btn-delete">Delete</button> 
+
+<button class="btn-edit">Edit</button> 
+
+<button class="btn-view">View</button> 
+
+</td> 
+
+</tr> 
+
+<tr> 
+
+<td>002</td> 
+
+<td>Hibiscus rosa-sinensis</td> 
+
+<td>Outdoor plant</td> 
+
+<td><img src="https://images.unsplash.com/photo-1567990989224-6441e1483ac8?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="hibiscus" class="image"></td> 
+
+<td class="btn-group"> 
+
+<button class="btn-delete">Delete</button> 
+
+<button class="btn-edit">Edit</button> 
+
+<button class="btn-view">View</button> 
+
+</td> 
+
+</tr> 
+
+<tr> 
+
+<td>003</td> 
+
+<td>Dracaena trifasciata</td> 
+
+<td>Indoor plant</td> 
+
+<td><img src="https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25ha2UlMjBwbGFudHxlbnwwfHwwfHx8MA%3D%3D" alt="snake" class="image"></td> 
+
+<td class="btn-group"> 
+
+<button class="btn-delete">Delete</button> 
+
+<button class="btn-edit">Edit</button> 
+
+<button class="btn-view">View</button> 
+
+</td> 
+
+</tr> 
+
+<tr> 
+
+<td>004</td> 
+
+<td>Rosa rubiginosa</td> 
+
+<td>Outdoor plant</td> 
+
+<td><img src="https://images.unsplash.com/photo-1559563338-6806c84e85b0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="rose" class="image"></td> 
+
+<td class="btn-group"> 
+
+<button class="btn-delete">Delete</button> 
+
+<button class="btn-edit">Edit</button> 
+
+<button class="btn-view">View</button> 
+
+</td> 
+
+</tr> 
+
+<tr> 
+
+<td>005</td> 
+
+<td>Chlorophytum comosum</td> 
+
+<td>Indoor plant</td> 
+
+<td><img src="https://images.unsplash.com/photo-1611527664689-d430dd2a6774?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="spider" class="image"></td> 
+
+<td class="btn-group"> 
+
+<button class="btn-delete">Delete</button> 
+
+<button class="btn-edit">Edit</button> 
+
+<button class="btn-view">View</button> 
+
+</td> 
+
+</tr> 
+
+<!-- Add more rows for other plants --> 
+
+</tbody> 
+
+</table> 
+
+ 
+
+</body> 
+
+</html> 

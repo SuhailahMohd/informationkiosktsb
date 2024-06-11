@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="dashboardstyle.css">
+</head>
+<body>
+    <header>
+        <h1>Staff Dashboard</h1>
+        <div id="welcome-message"></div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li> 
+             	 <li><a href="createPlant.html">Plants</a></li>
+                <li><a href="createSchedule.html">Schedule</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Home Page</h2>
+            <p>Welcome to the staff dashboard. Here you can manage your plants, schedules, and view feedback.</p>
+        </section>
+        <section id="plants">
+            <h2>Plant Page</h2>
+            <p>Manage your plants here.</p>
+        </section>
+        <section id="schedule">
+            <h2>Schedule Page</h2>
+            <p>Manage your schedule here.</p>
+        </section>
+        <section id="feedback">
+            <h2>Feedback Page</h2>
+            <p>View feedback from visitors here.</p>
+        </section>
+    </main>
+    <script >
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // Simulate getting the staff's name from a login process
+        const staffName = "Aston Martin";  // This should be dynamically set after login
+
+        // Update the welcome message
+        const welcomeMessage = document.getElementById("welcome-message");
+        welcomeMessage.textContent = `Welcome, ${staffName}`;
+    });
+</script>
+</body>
+</html>

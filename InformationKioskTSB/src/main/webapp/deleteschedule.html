@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2e8b57;
+            margin-top: 0;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .nav-buttons button:hover {
+            background-color: #f4a460;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-container label {
+            margin-right: 10px;
+        }
+        .search-container select, .search-container button {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-container select {
+            background-color: #fff;
+        }
+        .search-container button {
+            background-color: #2e8b57;
+            color: white;
+        }
+        .search-container button:hover {
+            background-color: #f4a460;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4a460;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        hr {
+            margin: 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+        .day-separator {
+            border-top: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Schedule</h1>
+        <hr>
+        <div class="top-nav">
+            <div class="search-container">
+                <label for="daySelect">Select Day:</label>
+                <select id="daySelect">
+                    <option value="">--Select Day--</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+                <button onclick="findSchedule()">Find Schedule</button>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="location.href='UpdateSchedule.html'">Update</button>
+                <button onclick="location.href='DeleteSchedule.html'">Delete</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Date</th>
+                    <th>Staff Name</th>
+                    <th>Task</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleTable">
+                <!-- Monday Schedule -->
+                <tr>
+                    <td rowspan="4">Monday</td>
+                    <td rowspan="4">2024-06-10</td>
+                    <td>John Doe</td>
+                    <td>Watering Plants</td>
+                    <td>09:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Pruning</td>
+                    <td>11:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Fertilizing</td>
+                    <td>10:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Mark Johnson</td>
+                    <td>Pest Control</td>
+                    <td>02:00 PM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="day-separator"></td>
+                </tr>
+                <!-- Tuesday Schedule -->
+                <tr>
+                    <td rowspan="4">Tuesday</td>
+                    <td rowspan="4">2024-06-11</td>
+                    <td>Emily Davis</td>
+                    <td>Fertilizing</td>
+                    <td>10:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Pest Control</td>
+                    <td>02:00 PM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>John Smith</td>
+                    <td>Pruning</td>
+                    <td>08:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Doe</td>
+                    <td>Watering Plants</td>
+                    <td>11:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="day-separator"></td>
+                </tr>
+                <!-- Wednesday Schedule -->
+                <tr>
+                    <td rowspan="4">Wednesday</td>
+                    <td rowspan="4">2024-06-12</td>
+                    <td>Paul Brown</td>
+                    <td>Planting</td>
+                    <td>09:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Weeding</td>
+                    <td>11:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Lisa Green</td>
+                    <td>Harvesting</td>
+                    <td>10:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Sam White</td>
+                    <td>Soil Testing</td>
+                    <td>02:00 PM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="day-separator"></td>
+                </tr>
+                <!-- Thursday Schedule -->
+                <tr>
+                    <td rowspan="4">Thursday</td>
+                    <td rowspan="4">2024-06-13</td>
+                    <td>Chris Blue</td>
+                    <td>Watering Plants</td>
+                    <td>09:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Pruning</td>
+                    <td>11:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Sara Black</td>
+                    <td>Fertilizing</td>
+                    <td>10:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Tom Grey</td>
+                    <td>Pest Control</td>
+                    <td>02:00 PM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="day-separator"></td>
+                </tr>
+                <!-- Friday Schedule -->
+                <tr>
+                    <td rowspan="4">Friday</td>
+                    <td rowspan="4">2024-06-14</td>
+                    <td>Anna Purple</td>
+                    <td>Planting</td>
+                    <td>09:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Weeding</td>
+                    <td>11:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Eva Yellow</td>
+                    <td>Harvesting</td>
+                    <td>10:00 AM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Joe Orange</td>
+                    <td>Soil Testing</td>
+                    <td>02:00 PM</td>
+                    <td><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function deleteRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+            alert('Schedule deleted successfully!');
+        }
+
+        function findSchedule() {
+            const day = document.getElementById("daySelect").value;
+            const tableRows = document.querySelectorAll("#scheduleTable tr");
+            let found = false;
+            tableRows.forEach(row => {
+                const dayCell = row.cells[0];
+                if (dayCell && dayCell.textContent.trim() === day.trim()) {
+                    row.style.backgroundColor = "yellow";
+                    found = true;
+                } else {
+                    row.style.backgroundColor = "";
+                }
+            });
+            if (!found) {
+                alert("Schedule not found for the selected day.");
+            }
+        }
+    </script>
+</body>
+</html>

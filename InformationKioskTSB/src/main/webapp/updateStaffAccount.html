@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Update Staff Account</title> 
+<style> 
+.bordered { 
+    border: 1px solid black; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+} 
+</style> 
+<script> 
+function submitForm() { 
+    var staffId = document.getElementById('staffId').value; 
+    var staffDetails = "<p>Staff ID: " + staffId + "</p>"; 
+    document.getElementById('staffDetails').innerHTML = staffDetails; 
+    document.getElementById('updateForm').style.display = 'block'; 
+} 
+
+function resetForm() { 
+    document.getElementById('staffId').value = ''; 
+    document.getElementById('updateForm').style.display = 'none'; 
+    document.getElementById('staffDetails').innerHTML = ''; 
+} 
+
+function cancelUpdate() { 
+    document.getElementById('updateForm').style.display = 'none'; 
+    document.getElementById('staffDetails').innerHTML = ''; 
+} 
+
+function confirmUpdate() { 
+    var fullName = document.getElementById('fullName').value; 
+    var lastName = document.getElementById('lastName').value;
+    var email = document.getElementById('email').value; 
+    var password = document.getElementById('password').value; 
+    var departmentID = document.getElementById('departmentID').value; 
+    var departmentName = document.getElementById('departmentName').value; 
+ 
+    alert("Staff information updated successfully!"); 
+} 
+</script> 
+</head> 
+<body style="background-color: #e1efca;"> 
+<div class="bordered" align="center"> 
+    <h2>Update Staff Account</h2> 
+    <form id="userForm"> 
+        <label for="staffId">Enter Staff ID:</label> 
+        <input type="text" id="staffId" name="staffId"><br><br> 
+        <input type="button" value="Submit" onclick="submitForm()"> 
+        <input type="button" value="Reset" onclick="resetForm()"> 
+    </form> 
+</div> 
+<div class="bordered" align="center" id="updateForm" style="display: none;"> 
+    <h2>Update Staff Information</h2> 
+    <form> 
+        <label for="fullName">Full Name:</label> 
+        <input type="text" id="fullName" name="fullName"><br><br> 
+        <label for="lastName">Last Name:</label> 
+        <input type="text" id="lastName" name="lastName"><br><br> 
+        <label for="email">Email:</label> 
+        <input type="email" id="email" name="email"><br><br> 
+        <label for="password">Password:</label> 
+        <input type="password" id="password" name="password"><br><br>
+        <label for="departmentID">Department ID:</label> 
+        <input type="text" id="departmentID" name="departmentID"><br><br>  
+        <label for="departmentName">Department Name:</label> 
+        <input type="text" id="department" name="departmentName"><br><br> 
+        <button type="button" onclick="confirmUpdate()">Update</button> 
+        <button type="button" onclick="cancelUpdate()">Cancel</button> 
+    </form> 
+</div> 
+<div align="center" id="staffDetails"></div> 
+</body> 
+</html>
